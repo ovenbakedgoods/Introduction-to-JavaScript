@@ -17,6 +17,7 @@ Do the following:
 
    HINT: no function required
 */
+//just checking
 const votingAge = 22;
 if (votingAge >= 18){
   console.log(true)
