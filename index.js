@@ -39,10 +39,7 @@ let numberTwo = "World";
 if(numberOne !== numberTwo){
   numberOne = numberTwo
 }
-
-
-
-
+console.log(numberOne);
 /*
 Task 1c - Convert Strings to Numbers
 
@@ -58,10 +55,6 @@ let valueOne = "1999";
 console.log(valueOne);
 valueOne = 1999;
 console.log(valueOne);
-
-
-
-
 /*
 Task 1d - Multiply
  
@@ -74,9 +67,6 @@ Do the following:
 function multiply(a, b){
     return a * b;
   }
-
-
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Age in Dog years
@@ -120,8 +110,37 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(dogWeight, dogAge){
+    if (dogAge > 1){
+
+      if (dogWeight <= 5){
+        return dogWeight * .05;
+      }
+      else if (dogWeight > 5 && dogWeight <= 10){
+        return dogWeight * .04;
+      }
+      else if (dogWeight > 10 && dogWeight <= 15){
+        return dogWeight * .03;
+      }
+      else if (dogWeight > 15){
+        return dogWeight * .02;
+      }
+
+    } 
+  
+    else if (dogAge < 1){
+
+      if (dogWeight <= 4/12){
+        return dogWeight * .1;
+      }
+      else if (dogWeight >= 4/12 && dogWeight <= 7/12){
+        return dogWeight * .05;
+      }
+    
+    else if(dogWeight >= 7/12){
+      return dogWeight * .04;
+    }
+    }
   }
 
 
@@ -164,8 +183,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers){
+  let milesNumber = kilometers * 0.62137119224;
+  return milesNumber;
   }
 
 
@@ -178,8 +198,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(centimeters){
+    numFeet = centimeters * 0.0328084;
+    return numFeet;
   }
  
 
@@ -194,9 +215,14 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(startingNumber){
+  while (startingNumber > 1){
+    let numberLeftOver = startingNumber -1;
+    console.log(`${startingNumber} bottles of soda on the wall, ${startingNumber} bottles of soda, take one down pass it around ${numberLeftOver} bottles of soda on the wall`);
+    startingNumber--;
+
   }
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
