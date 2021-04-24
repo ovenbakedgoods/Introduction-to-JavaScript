@@ -10,6 +10,7 @@ creturns a value, that value will be logged to the console.  An example of this 
 /*
 
 //hello world
+// taco night
 Task 1a - Voting Age
 
 Do the following:   
