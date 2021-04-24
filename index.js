@@ -55,7 +55,6 @@ Do the following:
 */
 
 let valueOne = "1999";
-console.log(valueOne);
 valueOne = 1999;
 console.log(valueOne);
 /*
@@ -80,9 +79,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(actualAge){
-    return actualAge * 7;
+function dogYears(humanYears){
+    return humanYears * 7;
 }
+dogYears(5)
 
 
 
@@ -114,7 +114,7 @@ Use the hungryDog function and feeding requirements below to do the following:
 */  
 
 function hungryDog(dogWeight, dogAge){
-    if (dogAge > 1){
+    if (dogAge >= 1){
 
       if (dogWeight <= 5){
         return dogWeight * .05;
@@ -145,7 +145,7 @@ function hungryDog(dogWeight, dogAge){
     }
     }
   }
-
+hungryDog(23, 2)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -168,15 +168,91 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+var computer = Math.random()
 
-function game(user, computer){
-    /*add your code here*/
+function game(user, computer)
+{
+    if (computer < .34)
+    {
+      computer = "rock";
+    }
+
+    else if (computer > .33 && computer < .67)
+    {
+      computer = "paper";
+    }
+
+    else 
+    {
+      computer = "scissors";
+    }
+    let result = ""; 
+
+    if (user === "rock")
+    {
+      switch(computer) 
+      {
+        case "scissors":
+          result = "you win!";
+          break;
+
+        case "paper":
+          result = "you lose";
+          break;
+
+        case "rock":
+        result = "its a tie";
+        break;
+      }
+    
+    return result;
+    }
+
+    else if (user === "paper")
+    {
+      switch(computer) 
+      {
+        case "scissors":
+          result = "you lose!";
+          break;
+
+        case "paper":
+          result = "its a tie";
+          break;
+
+        case "rock":
+          result =  "you win!";
+          break;
+      }
+      return result;
+    }
+
+
+    if (user === "scissors")
+    {
+      switch(computer)
+       {
+        case "scissors":
+          result = "its a tie";
+          break;
+
+        case "paper":
+          result =  "you win!";
+          break;
+
+        case "rock":
+          result = "you lose!";
+          break;
+      }
+      
+      return result;
+    }
+
+    
 }
-  
-  
 
+  
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
 //Metric Converter 
 //Task 5a - KM to Miles 
 /*
@@ -187,7 +263,7 @@ Using the miles function below do the following:
 */
 
 function miles(kilometers){
-  let milesNumber = kilometers * 0.62137119224;
+  let milesNumber = kilometers * 0.621371;
   return milesNumber;
   }
 
@@ -202,7 +278,7 @@ Using the feet function below do the following:
 */
 
 function feet(centimeters){
-    numFeet = centimeters * 0.0328084;
+   let numFeet = centimeters / 30.48;
     return numFeet;
   }
  
@@ -219,12 +295,10 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(startingNumber){
-  while (startingNumber > 1){
-    let numberLeftOver = startingNumber -1;
-    console.log(`${startingNumber} bottles of soda on the wall, ${startingNumber} bottles of soda, take one down pass it around ${numberLeftOver} bottles of soda on the wall`);
-    startingNumber--;
 
-  }
+    let numberLeftOver = startingNumber -1;
+    return(`${startingNumber} bottles of soda on the wall, ${startingNumber} bottles of soda, take one down pass it around ${numberLeftOver} bottles of soda on the wall`);
+
 }
 
 
@@ -243,8 +317,26 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if (score >= 90){
+    return 'you got an A';
+  }
+
+  if (score >= 80 && score <= 89){
+    return 'you got a B'; 
+  }
+
+  if (score >= 70 && score <= 79){
+    return 'you got a C';
+  }
+
+  if (score >= 60 && score <= 69){
+    return 'you got a D';
+  }
+
+  if (score >= 50 && score <= 59){
+    return 'you got an F';
+  }
   }
   
   
