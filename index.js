@@ -168,24 +168,11 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-var computer = Math.random()
+//var computer = Math.random()
 
 function game(user, computer)
 {
-    if (computer < .34)
-    {
-      computer = "rock";
-    }
 
-    else if (computer > .33 && computer < .67)
-    {
-      computer = "paper";
-    }
-
-    else 
-    {
-      computer = "scissors";
-    }
     let result = ""; 
 
     if (user === "rock")
@@ -197,11 +184,11 @@ function game(user, computer)
           break;
 
         case "paper":
-          result = "you lose";
+          result = "you lose!";
           break;
 
         case "rock":
-        result = "its a tie";
+        result = "it's a tie";
         break;
       }
     
@@ -217,7 +204,7 @@ function game(user, computer)
           break;
 
         case "paper":
-          result = "its a tie";
+          result = "it's a tie";
           break;
 
         case "rock":
@@ -233,7 +220,7 @@ function game(user, computer)
       switch(computer)
        {
         case "scissors":
-          result = "its a tie";
+          result = "it's a tie";
           break;
 
         case "paper":
@@ -244,11 +231,9 @@ function game(user, computer)
           result = "you lose!";
           break;
       }
-      
-      return result;
-    }
 
-    
+      return result;
+    }   
 }
 
   
