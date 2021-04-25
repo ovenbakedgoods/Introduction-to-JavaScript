@@ -168,11 +168,26 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-//var computer = Math.random()
+var computer = Math.random()
+
+if (computer < .34)
+{
+  computer = "rock";
+}
+
+else if (computer > .33 && computer < .67)
+{
+  computer = "paper";
+}
+
+else 
+{
+  computer = "scissors";
+}
 
 function game(user, computer)
 {
-
+ 
     let result = ""; 
 
     if (user === "rock")
@@ -339,12 +354,39 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
-}
+function vowelCounter(string) {
+    let newString = string.toLowerCase();
+    let count = 0;
+    if(newString.includes('a'))
+    {
+      count++;
+    }
 
+    if(newString.includes('e'))
+    {
+      count++;
+    }
 
+    if(newString.includes('i'))
+    {
+      count++;
+    }
 
+    if(newString.includes('o'))
+    {
+      count++;
+    }
+
+    if(newString.includes('u'))
+    {
+      count++;
+    }
+return count;
+  }
+
+console.log("here are ")
+console.log(vowelCounter("whatisit"));
+console.log('vowels');
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){
     //console.log('its working');
