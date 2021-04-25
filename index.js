@@ -204,7 +204,6 @@ function game(user, computer)
 
         case "rock":
         result = "it's a tie";
-        break;
       }
     
     return result;
@@ -224,7 +223,6 @@ function game(user, computer)
 
         case "rock":
           result =  "you win!";
-          break;
       }
       return result;
     }
@@ -244,7 +242,6 @@ function game(user, computer)
 
         case "rock":
           result = "you lose!";
-          break;
       }
 
       return result;
