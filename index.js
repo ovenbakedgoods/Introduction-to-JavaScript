@@ -4,11 +4,13 @@
 
 /*
 When doing these tasks, we recommend using console.log to test the output of your code to make sure it works correctly.
-This will usually entail console logging the answer directly or console logging the invocation (call) of the function so when it
-returns a value, that value will be logged to the console.  An example of this would be:  console.log(theFunction(value1,value2))
+creturns a value, that value will be logged to the console.  An example of this would be:  console.log(theFunction(value1,value2))
 */
 
 /*
+
+//hello world
+// taco night
 Task 1a - Voting Age
 
 Do the following:   
@@ -17,7 +19,11 @@ Do the following:
 
    HINT: no function required
 */
-
+//just checking
+const votingAge = 22;
+if (votingAge >= 18){
+  console.log(true)
+}
 
 
 /*
@@ -30,11 +36,13 @@ Do the following:
 
    HINT: no function required
 */
+let numberOne = "Hello";
+let numberTwo = "World";
 
-
-
-
-
+if(numberOne !== numberTwo){
+  numberOne = numberTwo
+}
+console.log(numberOne);
 /*
 Task 1c - Convert Strings to Numbers
 
@@ -46,9 +54,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
-
+let valueOne = "1999";
+valueOne = 1999;
+console.log(valueOne);
 /*
 Task 1d - Multiply
  
@@ -58,12 +66,9 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a * b;
   }
-
-
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Age in Dog years
@@ -74,9 +79,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(humanYears){
+    return humanYears * 7;
 }
+dogYears(5)
 
 
 
@@ -107,10 +113,39 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
+function hungryDog(dogWeight, dogAge){
+    if (dogAge >= 1){
 
+      if (dogWeight <= 5){
+        return dogWeight * .05;
+      }
+      else if (dogWeight > 5 && dogWeight <= 10){
+        return dogWeight * .04;
+      }
+      else if (dogWeight > 10 && dogWeight <= 15){
+        return dogWeight * .03;
+      }
+      else if (dogWeight > 15){
+        return dogWeight * .02;
+      }
+
+    } 
+  
+    else if (dogAge < 1){
+
+      if (dogWeight <= 4/12){
+        return dogWeight * .1;
+      }
+      else if (dogWeight >= 4/12 && dogWeight <= 7/12){
+        return dogWeight * .05;
+      }
+    
+    else if(dogWeight >= 7/12){
+      return dogWeight * .04;
+    }
+    }
+  }
+hungryDog(23, 2)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -133,15 +168,88 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+var computer = Math.random()
 
-function game(user, computer){
-    /*add your code here*/
+if (computer < .34)
+{
+  computer = "rock";
 }
-  
-  
 
+else if (computer > .33 && computer < .67)
+{
+  computer = "paper";
+}
+
+else 
+{
+  computer = "scissors";
+}
+
+function game(user, computer)
+{
+ 
+    let result = ""; 
+
+    if (user === "rock")
+    {
+      switch(computer) 
+      {
+        case "scissors":
+          result = "you win!";
+          break;
+
+        case "paper":
+          result = "you lose!";
+          break;
+
+        case "rock":
+        result = "it's a tie";
+      }
+    
+    return result;
+    }
+
+    else if (user === "paper")
+    {
+      switch(computer) 
+      {
+        case "scissors":
+          result = "you lose!";
+          break;
+
+        case "paper":
+          result = "it's a tie";
+          break;
+
+        case "rock":
+          result =  "you win!";
+      }
+      return result;
+    }
+
+
+    if (user === "scissors")
+    {
+      switch(computer)
+       {
+        case "scissors":
+          result = "it's a tie";
+          break;
+
+        case "paper":
+          result =  "you win!";
+          break;
+
+        case "rock":
+          result = "you lose!";
+      }
+
+      return result;
+    }   
+}
+
+  
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
 //Metric Converter 
 //Task 5a - KM to Miles 
 /*
@@ -151,8 +259,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers){
+  let milesNumber = kilometers * 0.621371;
+  return milesNumber;
   }
 
 
@@ -165,8 +274,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(centimeters){
+   let numFeet = centimeters / 30.48;
+    return numFeet;
   }
  
 
@@ -181,9 +291,12 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
+function annoyingSong(startingNumber){
+
+    let numberLeftOver = startingNumber -1;
+    return(`${startingNumber} bottles of soda on the wall, ${startingNumber} bottles of soda, take one down pass it around ${numberLeftOver} bottles of soda on the wall`);
+
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -201,8 +314,26 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if (score >= 90){
+    return 'you got an A';
+  }
+
+  if (score >= 80 && score <= 89){
+    return 'you got a B'; 
+  }
+
+  if (score >= 70 && score <= 79){
+    return 'you got a C';
+  }
+
+  if (score >= 60 && score <= 69){
+    return 'you got a D';
+  }
+
+  if (score >= 50 && score <= 59){
+    return 'you got an F';
+  }
   }
   
   
@@ -220,12 +351,39 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
-}
+function vowelCounter(string) {
+    let newString = string.toLowerCase();
+    let count = 0;
+    if(newString.includes('a'))
+    {
+      count++;
+    }
 
+    if(newString.includes('e'))
+    {
+      count++;
+    }
 
+    if(newString.includes('i'))
+    {
+      count++;
+    }
 
+    if(newString.includes('o'))
+    {
+      count++;
+    }
+
+    if(newString.includes('u'))
+    {
+      count++;
+    }
+return count;
+  }
+
+console.log("here are ")
+console.log(vowelCounter("whatisit"));
+console.log('vowels');
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){
     //console.log('its working');
